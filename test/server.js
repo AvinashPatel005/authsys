@@ -1,6 +1,6 @@
 const express = require("express");
 const crypto = require("crypto");
-const authsys = require("../src/index");
+const authsy = require("../src/index");
 const cors = require("cors");
 
 const app = express();
@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors()); // Allow frontend requests
 
 const secretKey = "mySecretKey";
-const auth = new authsys(secretKey, true, false);
+const auth = new authsy(secretKey, true, false);
 
 function getClientIP(req) {
     return req.headers["x-forwarded-for"] || req.connection.remoteAddress;
